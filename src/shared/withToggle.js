@@ -9,12 +9,13 @@ const withToggle = ( WrappedComponent ) => {
             }
         }
         
-        toggle = () => {
+        toggle = (event) => {
             this.setState((prevState)=>{
                 return {
                     toggleStatus: !prevState.toggleStatus
                 }
             })
+            console.log(event)
         }
         render(){
             return <WrappedComponent 

@@ -4,18 +4,21 @@ import withToggle from '../shared/withToggle'
 
 
 class AlifeLogo extends Component{
+    constructor(props){
+        super(props)
+    }
+    
     render(){
         const { toggle, toggleStatus, name } = this.props
         const style = {
-            visibility: 'visible'
+            backgroundColor: 'black'
         }
-        !toggleStatus? style.visibility = 'hidden' : style.visibility = 'visible'
+        !toggleStatus? style.backgroundColor = 'white' : style.backgroundColor = 'black'
         console.log(toggleStatus)
         return(
-            <div>
-                <img src={logo} className="App-logo" alt="logo" onMouseOver={toggle}
-                style={style}
-                />
+            <div onMouseOver={(event) => toggle(event)}
+                style={style}>
+                <img src={logo} className="App-logo" alt="logo" />
                 <div> Toggle Satus is {toggleStatus} </div>
                 <div> My Name is {name} </div>
             </div>
